@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: FuzzyWuzzy
+Globals:
+  Function:
+    Runtime: python3.7
+    Timeout: 3
+Resources:
+  FuzzyWuzzyLambdaLayer:
+    Properties:
+      CompatibleRuntimes:
+      - python3.7
+      ContentUri: s3://lambda-layer-geetharam/layer.zip
+      Description: FuzzyWuzzy Lambda Layer
+      LayerName: fuzzywuzzy
+      LicenseInfo: MIT
+      RetentionPolicy: Retain
+    Type: AWS::Serverless::LayerVersion
+Transform: AWS::Serverless-2016-10-31
